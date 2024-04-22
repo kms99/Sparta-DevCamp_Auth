@@ -18,7 +18,7 @@ const BASIC_INPUTS = [
 
 const PW_INPUTS = [
   { innerLabel: "비밀번호", id: "password", type: "password" },
-  { innerLabel: "비밀번호 확인", id: "password", type: "password" },
+  { innerLabel: "비밀번호 확인", id: "password_check", type: "password" },
 ];
 
 const BASIC_SELECTS = [

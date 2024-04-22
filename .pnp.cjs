@@ -34,6 +34,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.2.25"],\
           ["class-variance-authority", "npm:0.7.0"],\
           ["clsx", "npm:2.1.0"],\
+          ["embla-carousel-react", "virtual:a9c551bc27614e1ea95a515c3aa61e7ac2da12935e13281bf86bb6281076c9e8e68149cdfb3e421407d15b3cb9ee0089429e3455b0558e611595678efef91ff1#npm:8.0.2"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:a9c551bc27614e1ea95a515c3aa61e7ac2da12935e13281bf86bb6281076c9e8e68149cdfb3e421407d15b3cb9ee0089429e3455b0558e611595678efef91ff1#npm:14.2.2"],\
           ["lucide-react", "virtual:a9c551bc27614e1ea95a515c3aa61e7ac2da12935e13281bf86bb6281076c9e8e68149cdfb3e421407d15b3cb9ee0089429e3455b0558e611595678efef91ff1#npm:0.372.0"],\
@@ -2093,6 +2094,61 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["embla-carousel", [\
+      ["npm:8.0.2", {\
+        "packageLocation": "../../../../Users/kms/AppData/Local/Yarn/Berry/cache/embla-carousel-npm-8.0.2-fd54c896e6-10c0.zip/node_modules/embla-carousel/",\
+        "packageDependencies": [\
+          ["embla-carousel", "npm:8.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["embla-carousel-react", [\
+      ["npm:8.0.2", {\
+        "packageLocation": "../../../../Users/kms/AppData/Local/Yarn/Berry/cache/embla-carousel-react-npm-8.0.2-52e2924c34-10c0.zip/node_modules/embla-carousel-react/",\
+        "packageDependencies": [\
+          ["embla-carousel-react", "npm:8.0.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:a9c551bc27614e1ea95a515c3aa61e7ac2da12935e13281bf86bb6281076c9e8e68149cdfb3e421407d15b3cb9ee0089429e3455b0558e611595678efef91ff1#npm:8.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/embla-carousel-react-virtual-c94845f934/5/Users/kms/AppData/Local/Yarn/Berry/cache/embla-carousel-react-npm-8.0.2-52e2924c34-10c0.zip/node_modules/embla-carousel-react/",\
+        "packageDependencies": [\
+          ["embla-carousel-react", "virtual:a9c551bc27614e1ea95a515c3aa61e7ac2da12935e13281bf86bb6281076c9e8e68149cdfb3e421407d15b3cb9ee0089429e3455b0558e611595678efef91ff1#npm:8.0.2"],\
+          ["@types/react", "npm:18.2.79"],\
+          ["embla-carousel", "npm:8.0.2"],\
+          ["embla-carousel-reactive-utils", "virtual:c94845f934af97dfd82a46e02eeda8235c612e952af073b43c49d03a5e1468b26c80a8833a92e66076af644af5389b9bcbb13b8344db0b47120220007b81a190#npm:8.0.2"],\
+          ["react", "npm:18.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["embla-carousel-reactive-utils", [\
+      ["npm:8.0.2", {\
+        "packageLocation": "../../../../Users/kms/AppData/Local/Yarn/Berry/cache/embla-carousel-reactive-utils-npm-8.0.2-119613ab78-10c0.zip/node_modules/embla-carousel-reactive-utils/",\
+        "packageDependencies": [\
+          ["embla-carousel-reactive-utils", "npm:8.0.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:c94845f934af97dfd82a46e02eeda8235c612e952af073b43c49d03a5e1468b26c80a8833a92e66076af644af5389b9bcbb13b8344db0b47120220007b81a190#npm:8.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/embla-carousel-reactive-utils-virtual-f10f24b423/5/Users/kms/AppData/Local/Yarn/Berry/cache/embla-carousel-reactive-utils-npm-8.0.2-119613ab78-10c0.zip/node_modules/embla-carousel-reactive-utils/",\
+        "packageDependencies": [\
+          ["embla-carousel-reactive-utils", "virtual:c94845f934af97dfd82a46e02eeda8235c612e952af073b43c49d03a5e1468b26c80a8833a92e66076af644af5389b9bcbb13b8344db0b47120220007b81a190#npm:8.0.2"],\
+          ["@types/embla-carousel", null],\
+          ["embla-carousel", "npm:8.0.2"]\
+        ],\
+        "packagePeers": [\
+          "@types/embla-carousel",\
+          "embla-carousel"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["emoji-regex", [\
       ["npm:8.0.0", {\
         "packageLocation": "../../../../Users/kms/AppData/Local/Yarn/Berry/cache/emoji-regex-npm-8.0.0-213764015c-10c0.zip/node_modules/emoji-regex/",\
@@ -4119,6 +4175,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.2.25"],\
           ["class-variance-authority", "npm:0.7.0"],\
           ["clsx", "npm:2.1.0"],\
+          ["embla-carousel-react", "virtual:a9c551bc27614e1ea95a515c3aa61e7ac2da12935e13281bf86bb6281076c9e8e68149cdfb3e421407d15b3cb9ee0089429e3455b0558e611595678efef91ff1#npm:8.0.2"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:a9c551bc27614e1ea95a515c3aa61e7ac2da12935e13281bf86bb6281076c9e8e68149cdfb3e421407d15b3cb9ee0089429e3455b0558e611595678efef91ff1#npm:14.2.2"],\
           ["lucide-react", "virtual:a9c551bc27614e1ea95a515c3aa61e7ac2da12935e13281bf86bb6281076c9e8e68149cdfb3e421407d15b3cb9ee0089429e3455b0558e611595678efef91ff1#npm:0.372.0"],\

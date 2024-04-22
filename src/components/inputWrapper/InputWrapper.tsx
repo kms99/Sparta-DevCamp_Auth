@@ -7,7 +7,7 @@ interface Props extends ComponentProps<"input"> {}
 
 const InputWrapper = ({ children, ...props }: PropsWithChildren<Props>) => {
   return (
-    <CardContent>
+    <CardContent className="px-0">
       <Label htmlFor={props.id}>{children}</Label>
       <Input {...props} />
     </CardContent>

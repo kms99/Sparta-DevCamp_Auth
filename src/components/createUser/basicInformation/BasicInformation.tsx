@@ -2,10 +2,11 @@ import InputWrapper from "@/components/inputWrapper/InputWrapper";
 import SelectWrapper from "@/components/selectWrapper/SelectWrapper";
 import React from "react";
 import { BASIC_INPUTS, BASIC_SELECTS } from "../constants";
+import { CarouselItem } from "@/components/ui/carousel";
 
 const BasicInformation = () => {
   return (
-    <>
+    <CarouselItem>
       {BASIC_INPUTS.map((input) => (
         <InputWrapper
           key={input.id}
@@ -26,7 +27,7 @@ const BasicInformation = () => {
           {select.innerLabel}
         </SelectWrapper>
       ))}
-    </>
+    </CarouselItem>
   );
 };
 

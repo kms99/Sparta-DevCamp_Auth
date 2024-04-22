@@ -18,7 +18,7 @@ interface Props {
 
 const SelectWrapper = ({ children, ...props }: PropsWithChildren<Props>) => {
   return (
-    <CardContent>
+    <CardContent className="px-0">
       <Label htmlFor={props.id}>{children}</Label>
       <Select>
         <SelectTrigger id={props.id}>
