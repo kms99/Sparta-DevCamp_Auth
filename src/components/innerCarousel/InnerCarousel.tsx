@@ -72,10 +72,14 @@ const InnerCarousel = () => {
         </CarouselContent>
 
         <CardFooterWrapper>
-          {!!current && <Button type="submit">계정 등록하기</Button>}
-          <CarouselPrevious variant="ghost" size="default" type="button">
-            이전 단계로
-          </CarouselPrevious>
+          {!!current && (
+            <>
+              <Button type="submit">계정 등록하기</Button>
+              <CarouselPrevious variant="ghost" size="default" type="button">
+                이전 단계로
+              </CarouselPrevious>
+            </>
+          )}
           {!current && (
             <CarouselNext
               id="middle_form"
