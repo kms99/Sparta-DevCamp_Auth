@@ -24,7 +24,7 @@ const FormInputWrapper = ({
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className="px-0">
+        <FormItem className="px-0 mb-4">
           <FormLabel>{children}</FormLabel>
           <FormControl>
             <Input {...props} {...field} />

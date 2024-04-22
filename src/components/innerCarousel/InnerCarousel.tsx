@@ -55,8 +55,6 @@ const InnerCarousel = () => {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
     });
-
-    api.off("scroll", () => {});
   }, [api, current]);
 
   return (

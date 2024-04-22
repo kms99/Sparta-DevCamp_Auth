@@ -35,7 +35,7 @@ const SelectWrapper = ({
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem>
+        <FormItem className=" mb-6">
           <FormLabel>{children}</FormLabel>
           <Select onValueChange={field.onChange}>
             <FormControl>
