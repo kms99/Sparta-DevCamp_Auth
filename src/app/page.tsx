@@ -4,7 +4,7 @@ import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center min-h-screen">
       <CardWrapper>
         <CardHeader>
           <CardTitle>계정을 생성합니다</CardTitle>

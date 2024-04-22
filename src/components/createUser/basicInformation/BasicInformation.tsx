@@ -3,7 +3,7 @@ import SelectWrapper from "@/components/selectWrapper/SelectWrapper";
 import React from "react";
 import { BASIC_INPUTS, BASIC_SELECTS } from "../constants";
 import { CarouselItem } from "@/components/ui/carousel";
-import { Control, FieldValues } from "react-hook-form";
+import { Control } from "react-hook-form";
 import { FormValues } from "@/components/innerCarousel/InnerCarousel";
 
 interface Props {
