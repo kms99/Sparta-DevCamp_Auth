@@ -7,18 +7,19 @@ import { FormValues } from "@/components/innerCarousel/InnerCarousel";
 
 interface Props {
   control: Control<FormValues, any>;
+  current: number;
 }
 
-const PasswordCheck = ({ control }: Props) => {
+const PasswordCheck = ({ control, current }: Props) => {
   return (
     <CarouselItem>
       {PW_INPUTS.map((input) => (
         <FormInputWrapper
           key={input.id}
-          id={input.id}
+          name={input.id}
           type={input.type}
           control={control}
-          name={input.id}
+          tabIndex={!!current ? 0 : -1}
         >
           {input.innerLabel}
         </FormInputWrapper>

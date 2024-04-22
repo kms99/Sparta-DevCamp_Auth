@@ -29,7 +29,7 @@ const PW_INPUTS = [
   },
   {
     innerLabel: "비밀번호 확인",
-    id: "password_check",
+    id: "check_password",
     type: "password",
   },
 ];

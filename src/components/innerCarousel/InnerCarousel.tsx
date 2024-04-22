@@ -69,14 +69,22 @@ const InnerCarousel = () => {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
     });
+
+    api.off("scroll", () => {});
   }, [api, current]);
 
   return (
-    <Carousel setApi={setApi} className="p-6 pt-0">
+    <Carousel
+      setApi={setApi}
+      className="p-6 pt-0"
+      opts={{
+        watchDrag: false,
+      }}
+    >
       <FormWrapper form={form} currentIndex={current} onSubmit={onSubmit}>
         <CarouselContent>
           <BasicInformation control={form.control} />
-          <PasswordCheck control={form.control} />
+          <PasswordCheck control={form.control} current={current} />
         </CarouselContent>
 
         <CardFooterWrapper>
