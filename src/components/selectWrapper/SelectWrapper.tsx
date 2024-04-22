@@ -39,7 +39,7 @@ const SelectWrapper = ({
           <FormLabel>{children}</FormLabel>
           <Select onValueChange={field.onChange}>
             <FormControl>
-              <SelectTrigger>
+              <SelectTrigger tabIndex={-1}>
                 <SelectValue placeholder={props.placeholder} />
               </SelectTrigger>
             </FormControl>
