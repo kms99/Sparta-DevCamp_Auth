@@ -13,10 +13,53 @@ import PasswordCheck from "../createUser/passwordCheck/PasswordCheck";
 import CardFooterWrapper from "../cardWrapper/cardFooterWrapper/CardFooterWrapper";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { formSchema } from "@/lib/validations";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import FormWrapper from "../createUser/formWrapper/FormWrapper";
+
+export interface FormValues {
+  role: string;
+  email: string;
+  username: string;
+  phone: string;
+  password: string;
+  check_password: string;
+}
 
 const InnerCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState<number>(0);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+      role: "",
+      phone: "",
+      password: "",
+      email: "",
+      check_password: "",
+    },
+  });
+
+  const handleNextClick = async () => {
+    const isEmailValid = await form.trigger("email");
+    const isUsernameValid = await form.trigger("username");
+    const isPhoneValid = await form.trigger("phone");
+    const isRoleValid = await form.trigger("role");
+
+    if (isEmailValid && isUsernameValid && isPhoneValid && isRoleValid) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log(values);
+  };
 
   useEffect(() => {
     if (!api) {
@@ -30,25 +73,32 @@ const InnerCarousel = () => {
 
   return (
     <Carousel setApi={setApi} className="p-6 pt-0">
-      <CarouselContent>
-        <BasicInformation />
-        <PasswordCheck />
-      </CarouselContent>
+      <FormWrapper form={form} currentIndex={current} onSubmit={onSubmit}>
+        <CarouselContent>
+          <BasicInformation control={form.control} />
+          <PasswordCheck control={form.control} />
+        </CarouselContent>
 
-      <CardFooterWrapper>
-        {!!current && <Button>계정 등록하기</Button>}
-        <CarouselPrevious variant="ghost" size="default">
-          이전 단계로
-        </CarouselPrevious>
-        <CarouselNext
-          variant="default"
-          size="default"
-          className="flex items-center gap-1"
-        >
-          다음 단계로
-          <ArrowRight size={"1rem"} />
-        </CarouselNext>
-      </CardFooterWrapper>
+        <CardFooterWrapper>
+          {!!current && <Button type="submit">계정 등록하기</Button>}
+          <CarouselPrevious variant="ghost" size="default" type="button">
+            이전 단계로
+          </CarouselPrevious>
+          {!current && (
+            <CarouselNext
+              variant="default"
+              size="default"
+              className="flex items-center gap-1"
+              type="button"
+              name="middle_form"
+              handleNextClick={handleNextClick}
+            >
+              다음 단계로
+              <ArrowRight size={"1rem"} />
+            </CarouselNext>
+          )}
+        </CardFooterWrapper>
+      </FormWrapper>
     </Carousel>
   );
 };

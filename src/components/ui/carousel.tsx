@@ -228,22 +228,32 @@ const CarouselPrevious = React.forwardRef<
 );
 CarouselPrevious.displayName = "CarouselPrevious";
 
-const CarouselNext = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(
+type CarouselNextProps = React.ComponentProps<typeof Button> & {
+  handleNextClick?: () => Promise<boolean>; // 여기에 원하는 타입을 추가
+};
+
+const CarouselNext = React.forwardRef<HTMLButtonElement, CarouselNextProps>(
   (
     {
       className,
       variant = "outline",
       size = "icon",
       children = <ArrowRight className="h-4 w-4" />,
+      handleNextClick,
       ...props
     },
     ref
   ) => {
     const { orientation, scrollNext, canScrollNext } = useCarousel();
 
+    const handleClick = async () => {
+      if (handleNextClick) {
+        const isValid = await handleNextClick();
+        if (isValid) scrollNext();
+      } else {
+        scrollNext();
+      }
+    };
     return (
       <Button
         ref={ref}
@@ -251,7 +261,7 @@ const CarouselNext = React.forwardRef<
         size={size}
         className={cn(className, canScrollNext ? "flex" : "hidden")}
         disabled={!canScrollNext}
-        onClick={scrollNext}
+        onClick={handleClick}
         {...props}
       >
         {children}

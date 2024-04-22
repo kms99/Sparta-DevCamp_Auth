@@ -1,15 +1,27 @@
-import InputWrapper from "@/components/inputWrapper/InputWrapper";
+import FormInputWrapper from "@/components/inputWrapper/InputWrapper";
 import React from "react";
 import { PW_INPUTS } from "../constants";
 import { CarouselItem } from "@/components/ui/carousel";
+import { Control } from "react-hook-form";
+import { FormValues } from "@/components/innerCarousel/InnerCarousel";
 
-const PasswordCheck = () => {
+interface Props {
+  control: Control<FormValues, any>;
+}
+
+const PasswordCheck = ({ control }: Props) => {
   return (
     <CarouselItem>
       {PW_INPUTS.map((input) => (
-        <InputWrapper key={input.id} id={input.id} type={input.type}>
+        <FormInputWrapper
+          key={input.id}
+          id={input.id}
+          type={input.type}
+          control={control}
+          name={input.id}
+        >
           {input.innerLabel}
-        </InputWrapper>
+        </FormInputWrapper>
       ))}
     </CarouselItem>
   );

@@ -1,17 +1,39 @@
 import React, { ComponentProps, PropsWithChildren } from "react";
-import { CardContent } from "../ui/card";
 import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../ui/form";
 
-interface Props extends ComponentProps<"input"> {}
+interface Props extends ComponentProps<"input"> {
+  name: string;
+  control: any;
+}
 
-const InputWrapper = ({ children, ...props }: PropsWithChildren<Props>) => {
+const FormInputWrapper = ({
+  children,
+  name,
+  control,
+  ...props
+}: PropsWithChildren<Props>) => {
   return (
-    <CardContent className="px-0">
-      <Label htmlFor={props.id}>{children}</Label>
-      <Input {...props} />
-    </CardContent>
+    <FormField
+      control={control}
+      name={name}
+      render={({ field }) => (
+        <FormItem className="px-0">
+          <FormLabel>{children}</FormLabel>
+          <FormControl>
+            <Input {...props} {...field} />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )}
+    ></FormField>
   );
 };
 
-export default InputWrapper;
+export default FormInputWrapper;

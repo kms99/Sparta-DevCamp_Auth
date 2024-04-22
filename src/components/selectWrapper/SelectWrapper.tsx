@@ -9,30 +9,52 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Role } from "./selectWrapper.type";
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../ui/form";
 
 interface Props {
-  id: string;
   placeholder: string;
+  name: string;
+  control: any;
   values: Role[];
 }
 
-const SelectWrapper = ({ children, ...props }: PropsWithChildren<Props>) => {
+const SelectWrapper = ({
+  children,
+  name,
+  control,
+  ...props
+}: PropsWithChildren<Props>) => {
   return (
-    <CardContent className="px-0">
-      <Label htmlFor={props.id}>{children}</Label>
-      <Select>
-        <SelectTrigger id={props.id}>
-          <SelectValue placeholder={props.placeholder} />
-        </SelectTrigger>
-        <SelectContent>
-          {props.values.map((value, index) => (
-            <SelectItem key={`${value}_${index}`} value={value}>
-              {value}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    </CardContent>
+    <FormField
+      control={control}
+      name={name}
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>{children}</FormLabel>
+          <Select onValueChange={field.onChange}>
+            <FormControl>
+              <SelectTrigger>
+                <SelectValue placeholder={props.placeholder} />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent>
+              {props.values.map((value, index) => (
+                <SelectItem key={`${value}_${index}`} value={value}>
+                  {value}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <FormMessage />
+        </FormItem>
+      )}
+    ></FormField>
   );
 };
 

@@ -1,7 +1,12 @@
 import { Role } from "../selectWrapper/selectWrapper.type";
 
 const BASIC_INPUTS = [
-  { innerLabel: "이름", id: "name", type: "text", placeholder: "홍길동" },
+  {
+    innerLabel: "이름",
+    id: "username",
+    type: "text",
+    placeholder: "홍길동",
+  },
   {
     innerLabel: "이메일",
     id: "email",
@@ -17,8 +22,16 @@ const BASIC_INPUTS = [
 ];
 
 const PW_INPUTS = [
-  { innerLabel: "비밀번호", id: "password", type: "password" },
-  { innerLabel: "비밀번호 확인", id: "password_check", type: "password" },
+  {
+    innerLabel: "비밀번호",
+    id: "password",
+    type: "password",
+  },
+  {
+    innerLabel: "비밀번호 확인",
+    id: "password_check",
+    type: "password",
+  },
 ];
 
 const BASIC_SELECTS = [
