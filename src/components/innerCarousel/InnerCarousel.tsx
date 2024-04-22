@@ -31,7 +31,6 @@ export interface FormValues {
 const InnerCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState<number>(0);
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,21 +43,8 @@ const InnerCarousel = () => {
     },
   });
 
-  const handleNextClick = async () => {
-    const isEmailValid = await form.trigger("email");
-    const isUsernameValid = await form.trigger("username");
-    const isPhoneValid = await form.trigger("phone");
-    const isRoleValid = await form.trigger("role");
-
-    if (isEmailValid && isUsernameValid && isPhoneValid && isRoleValid) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    alert(JSON.stringify(values));
   };
 
   useEffect(() => {
@@ -83,7 +69,7 @@ const InnerCarousel = () => {
     >
       <FormWrapper form={form} currentIndex={current} onSubmit={onSubmit}>
         <CarouselContent>
-          <BasicInformation control={form.control} />
+          <BasicInformation control={form.control} current={current} />
           <PasswordCheck control={form.control} current={current} />
         </CarouselContent>
 
@@ -94,12 +80,13 @@ const InnerCarousel = () => {
           </CarouselPrevious>
           {!current && (
             <CarouselNext
+              id="middle_form"
               variant="default"
               size="default"
               className="flex items-center gap-1"
               type="button"
               name="middle_form"
-              handleNextClick={handleNextClick}
+              onClick={() => {}}
             >
               다음 단계로
               <ArrowRight size={"1rem"} />

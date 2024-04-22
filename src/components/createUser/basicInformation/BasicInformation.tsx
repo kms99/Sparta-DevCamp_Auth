@@ -8,9 +8,10 @@ import { FormValues } from "@/components/innerCarousel/InnerCarousel";
 
 interface Props {
   control: Control<FormValues, any>;
+  current: number;
 }
 
-const BasicInformation = ({ control }: Props) => {
+const BasicInformation = ({ control, current }: Props) => {
   return (
     <>
       <CarouselItem>
@@ -21,6 +22,7 @@ const BasicInformation = ({ control }: Props) => {
             type={input.type}
             control={control}
             name={input.id}
+            tabIndex={!!current ? -1 : 1}
           >
             {input.innerLabel}
           </FormInputWrapper>
