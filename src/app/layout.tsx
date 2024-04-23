@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/providers/ThemeProvider";
 import ModeToggle from "@/components/themeButton/ThemeButton";
+import { Toaster } from "@/components/ui/toaster";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
         >
           <ModeToggle />
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

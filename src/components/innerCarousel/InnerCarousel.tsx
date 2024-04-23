@@ -18,6 +18,7 @@ import { formSchema } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import FormWrapper from "../createUser/formWrapper/FormWrapper";
+import { useToast } from "../ui/use-toast";
 
 export interface FormValues {
   role: string;
@@ -42,10 +43,23 @@ const InnerCarousel = () => {
       check_password: "",
     },
   });
+  const { toast } = useToast();
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     alert(JSON.stringify(values));
   };
+
+  useEffect(() => {
+    if (
+      form.formState.errors.check_password?.message === "비밀번호가 다릅니다."
+    ) {
+      toast({
+        variant: "destructive",
+        title: "비밀번호 오류",
+        content: "비밀번호가 다릅니다.",
+      });
+    }
+  }, [form.formState.errors, toast]);
 
   useEffect(() => {
     if (!api) {
